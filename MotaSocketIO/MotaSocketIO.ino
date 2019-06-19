@@ -33,8 +33,8 @@ WebSocketsClient webSocket;
 bool isConnected = false;
 #define INTERVAL_EMIT_LOCATION 3000
 uint64_t messageTimestamp = 0;
-char* SOCKET_LINK = "192.168.1.2";
-int SOCKET_PORT = 3000;
+char* SOCKET_LINK = "192.168.1.3";
+int SOCKET_PORT = 4000;
 
 
 // GPS
@@ -276,7 +276,7 @@ void configuration_socket(){
   
   webSocket.beginSocketIO(SOCKET_LINK, SOCKET_PORT);
   webSocket.setExtraHeaders();
-  webSocket.setExtraHeaders("token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbnRpdHlfbmFtZSI6Im5vZGUxIiwiZW50aXR5X3R5cGUiOiJJT1Rfbm9kZSIsImVudGl0eV9tYWMiOiIiLCJjX21hbmFnZXIiOiI1Y2RiYTY4ZmUxZTZlMzBhOTk4YTI5ZmQiLCJvcGVyYXRvciI6IjVjZGJhNmNmZTFlNmUzMGE5OThhMjlmZSIsInBvb2xfbmFtZSI6InAxIiwiaWF0IjoxNTU5MzEwODg2fQ.149h6KF5KCjNbpE0IjUWivrmYslrJsCQl9TAQmej3XA\r\nbar: not");
+  webSocket.setExtraHeaders("token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZDA5Y2Q5MWM2ODUyYTQ0NGNmMjA0ZTQiLCJlbnRpdHlfbmFtZSI6Ik5vZGUxIiwiZW50aXR5X3R5cGUiOiJOb2RlX0lPVCIsImVudGl0eV9tYWMiOiJOOk46TjpOOk46TiIsImNfbWFuYWdlciI6IjVkMDUyYzQwYjc0MWMyMDMzYWE2Yjg4OCIsIm9wZXJhdG9yIjoiNWQwNTJjNWZiNzQxYzIwMzNhYTZiODg5IiwicG9vbF9uYW1lIjoicDEiLCJpYXQiOjE1NjA5MjQ2NTN9.tWbhWK8hT8wuprz3Xcc_MH-Wb_UDrxWUvAD0lkG8PjM\r\nbar: not");
   //webSocket.setAuthorization("user", "Password"); // HTTP Basic Authorization
 
   webSocket.onEvent(webSocketEvent);
